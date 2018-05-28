@@ -1,0 +1,255 @@
+html, body {
+    width: 100%;
+    height: 100%;
+  }
+  .HeaderText {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    color: #232426;
+    padding-top: 15px;
+    margin: 10px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .TaggingSection{
+    top:20px;
+    background: #e3e5ea;
+    box-shadow: 0px 0px 5px #888888;
+    left: 15%;
+    margin: 20px;
+    position: relative;
+    border: 1px solid black;
+    padding-bottom: 20px;
+    position: relative;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+
+}
+
+#captionInput {
+  padding-left: 30px;
+  margin: 20px;
+  font-size: 10px;
+
+}
+.SidePanel {
+    float: right;
+    right: 15%;
+    top: 60px;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+  #InfoPanel table {
+    margin-left: 10px;
+  }
+  
+  #InfoPanel td {
+    padding: 10px;
+  }
+  
+  .KeyboardKey {
+    border: 2px solid #d1d4d6;
+    background-color: #dee0e2;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+  }
+ 
+ .ImageView {
+   position: relative;
+   float: left;
+   width: 750px;
+   height: 500px;
+   border: 2px solid black;
+   padding: 2px;
+   margin: auto;
+   clear: both;
+   display: table;
+} 
+
+
+
+.BoundingBox {
+    border: 2px solid red;
+    position: absolute;
+    fill: transparent;
+    width: 10px;
+    height: 10px;
+    z-index: 4;
+}
+img {
+
+    float: left;
+   max-width: 100%;
+   max-height: 100%;
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-drag: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+}
+.image :hover {
+     box-shadow: 0 0 2px 1px rgba(54, 128, 153, 0.5);
+}
+/*
+
+  
+  .line {
+    cursor: crosshair;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  #verticalLine {
+    border-left: 2px dotted rgba(255, 255, 255, 0.6);
+  }
+  
+  #horizontalLine {
+    border-bottom: 2px dotted rgba(255, 255, 255, 0.6);
+  }
+  
+  #App {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #LabelViewContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+  
+  #Middle {
+    position: relative;
+    width: 750px;
+    height: auto;
+    margin: 0 auto;
+  
+  }
+  
+  #LabelView {
+    float: left;
+    position: relative;
+    cursor: crosshair;
+    top: 15%;
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .BoundingBox {
+    cursor: crosshair;
+    position: absolute;
+    border: 2px solid rgba(255, 51, 0, 0.8);
+    z-index: 4;
+  }
+  
+  .DeleteBoxButton {
+    cursor: default;
+    text-align: center;
+    line-height: 14px;
+    font-size: 10px;
+    position: absolute;
+    color: white;
+    top: -7px;
+    right: -7px;
+    height: 14px;
+    width: 14px;
+    background-color: grey;
+    border-radius: 9px;
+    border: 2px solid white;
+    z-index: 5;
+  }
+  
+  .unselectable {
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  #BoundingBoxes {
+    position: absolute;
+    cursor: crosshair;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #LabelViewImg {
+    display: block;
+    cursor: crosshair;
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .Instruction {
+    background-color: black;
+    color: white;
+    height: 100px;
+  }
+  
+  #Header p {
+    padding-top: 15px;
+    margin: 0px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  
+  #Header {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    color: #232426;
+  }
+  
+  #Crosshair {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+  }
+  
+  #SidePanel {
+    float: right;
+    position: relative;
+    padding: 10px;
+    width: 230px;
+    height: 100%;
+  }
+  
+  #InfoPanel table {
+    margin-left: 10px;
+  }
+  
+  #InfoPanel td {
+    padding: 10px;
+  }
+  
+  .KeyboardKey {
+    border: 2px solid #d1d4d6;
+    background-color: #dee0e2;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+  }
+  
+  
+  */
