@@ -1,0 +1,20 @@
+{
+  "name": "tagger",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.0",
+    "react-draggable": "^3.0.5",
+    "react-graceful-image": "^1.2.6",
+    "react-rnd": "^7.4.0",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
