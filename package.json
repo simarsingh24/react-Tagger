@@ -8,8 +8,10 @@
     "react-dom": "^16.4.0",
     "react-draggable": "^3.0.5",
     "react-graceful-image": "^1.2.6",
+    "react-redux": "^5.0.7",
     "react-rnd": "^7.4.0",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-thunk": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
