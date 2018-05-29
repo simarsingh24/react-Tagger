@@ -1,100 +1,61 @@
 import React, { Component } from 'react'
 import BoundingBox from './BoundingBox'
 import Image from 'react-graceful-image'
+import { connect } from 'react-redux'
+import { moveBox, resizeBox, createBox , deleteBox } from '../actions/actions'
 
-export default class componentName extends Component {
+class TaggingSection extends Component {
   constructor(){
     super();
     this.handleKey = this.handleKey.bind(this);
-    this.handleBoxResizeChange = this.handleBoxResizeChange.bind(this);
-    this.handleBoxPositionChange = this.handleBoxPositionChange.bind(this);
-    this.onMouseOver = this.onMouseOver.bind(this);
-    this.state = {
-      boundingBox : { 
-        width: 200,
-        height: 200,
-        x: 0,
-        y: 0,
-        maxWidth : 400,
-        maxHeight : 400,
-        minHeight : 50,
-        minWidth : 50
-      },
-      image: {
-        src : '../room.jpg',
-        offsetX:0,
-        offsetY:0
-      }
-    }
   }
-
   handleKey(e) {
-    //e.preventDefault();
-
-     console.log(e.code);
+    e.preventDefault();
+    switch(e.code){
+      case 'KeyY' : 
+         console.log("Pressed Y, creating box ");
+        this.props.createBox('2',0,0,100,100,50,50,500,500); break;
+      case 'KeyN':
+        this.props.deleteBox('1');break;
+      default : console.log('KeyEvent '+e.code);
+    }
   }
 
   componentDidMount(){
     document.addEventListener('keydown', this.handleKey);
-    var temp=document.getElementsByClassName("imageHolder")[0].getBoundingClientRect();
-    this.setState({
-      image : {
-        offsetX : temp.x,
-        offsetY : temp.y
-      }
-    });
   }
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKey);
   }
-
-  onMouseOver(e){
-    // this.setState({
-    //   boundingBox:{
-    //     x:e.pageX,
-    //     y:e.pageY
-    //   }
-    // })
-    // console.log("X "+this.state.boundingBox.x + " Y "+this.state.boundingBox.y);
-  }
-  handleBoxPositionChange(coordinateX,coordinateY){
-    this.setState({
-      boundingBox : {
-        x : coordinateX,
-        y : coordinateY,
-        width: this.state.boundingBox.width,
-        height: this.state.boundingBox.height,
-        maxWidth : this.state.boundingBox.maxWidth,
-        maxHeight : this.state.boundingBox.maxHeight,
-        minHeight : this.state.boundingBox.minHeight,
-        minWidth : this.state.boundingBox.minWidth
-      }
-    });
-  }
-  handleBoxResizeChange(w,h,position){
-    this.setState({
-      boundingBox : {
-        width : w,
-        height : h,
-        x : position.x,
-        y : position.y,
-        maxWidth : this.state.boundingBox.maxWidth,
-        maxHeight : this.state.boundingBox.maxHeight,
-        minHeight : this.state.boundingBox.minHeight,
-        minWidth : this.state.boundingBox.minWidth
-      }
-    });
-
-  }
   render() {
+    var currId = this.props.boundingBox.currId;
     return (
       <div className="TaggingSection" onMouseMove= {this.onMouseOver}>
          <BoundingBox 
-         data={this.state.boundingBox} 
-         onBoxPositionChange={this.handleBoxPositionChange} 
-         onBoxResize={this.handleBoxResizeChange}/>
+           data={this.props.boundingBox.byHash[currId]} 
+           onBoxPositionChange={(x,y)=>this.props.changePostion(currId,x,y)} 
+           onBoxResize={(w,h,position)=>this.props.resizeBox(currId,w,h,position.x,position.y)}/>
          <Image src ={require('../room.jpg')} alt="" className="imageHolder" />
       </div>
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    boundingBox: state.boxReducer
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return({
+      changePostion: (currId,x,y) => {dispatch(moveBox(currId,x,y))},
+      resizeBox : (currId,w,h,x,y)=>{dispatch(resizeBox(currId,w,h,x,y))},
+      createBox : (currId,x,y,w,h,minW,minH,maxW,maxH)=>{dispatch(createBox(currId,x,y,w,h,minW,minH,maxW,maxH))},
+      deleteBox : (id)=>{dispatch(deleteBox(id))}
+  })
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TaggingSection);
