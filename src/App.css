@@ -12,6 +12,19 @@ html, body {
     font-size: 20px;
     line-height: 20px;
   }
+  .RowBoxDetails {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #bbb;
+    background-color: #eee;
+  }
+  
+  .RowBoxDetails span {
+    margin: 10px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #333;
+  }
 
   .TaggingSection{
     top:20px;

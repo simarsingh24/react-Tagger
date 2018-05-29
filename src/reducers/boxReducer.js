@@ -31,14 +31,24 @@ const boxes=(state=initalState,action)=>{
             
         case "DELETE_BOX":
             const prunedIds = state.byId.filter(box => {
-                return box !== action.id // return all the items not matching the action.id
+                return box !== action.id 
             })
-            delete state.byHash[action.id] // delete the hash associated with the action.id
+            const prunedIdsByHash= Object.keys(state.byHash).reduce((result, key) => {
+                if (key !== action.id) {
+                    result[key] = state.byHash[key];
+                }
+                return result;
+            }, {})
+            //delete state.byHash[action.id] // delete the hash associated with the action.id
             
             return {
                 byId: prunedIds,
-                byHash: state.byHash,
+                byHash: prunedIdsByHash,
                 currId : (action.id===state.currId)?state.byId[0]:state.currId
+            }
+        case "SELECT_CURRENT_BOX":
+            return {
+                ...state,currId : action.id
             }
 
             

@@ -14,6 +14,12 @@ export const createBox=(id,x,y,w,h,minW,minH,maxW,maxH)=>{
         }
     }
 }
+export const selectCurrBox=(id)=>{
+    return {
+        type : "SELECT_CURRENT_BOX",
+        id : id
+    }
+}
 export const deleteBox=(id)=>{
     return{
         type : "DELETE_BOX",

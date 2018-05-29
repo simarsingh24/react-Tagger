@@ -11,10 +11,12 @@ class TaggingSection extends Component {
   }
   handleKey(e) {
     e.preventDefault();
+    var currId = this.props.boundingBox.currId;
     switch(e.code){
       case 'KeyY' : 
          console.log("Pressed Y, creating box ");
-        this.props.createBox('2',0,0,100,100,50,50,500,500); break;
+        var id = parseInt(currId)+1;
+        this.props.createBox(id.toString(),0,0,100,100,50,50,500,500); break;
       case 'KeyN':
         this.props.deleteBox('1');break;
       default : console.log('KeyEvent '+e.code);

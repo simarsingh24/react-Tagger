@@ -3,6 +3,7 @@ import './App.css';
 import TaggingSection from './components/TagingSection';
 import Header from './components/Header';
 import InfoPanel from './components/InfoPanel';
+import ListBoxDetails from './components/ListBoxDetails';
 import { Provider } from 'react-redux';
 import store from './store/store';
 
@@ -15,6 +16,7 @@ class App extends Component {
             <InfoPanel />
             <Header/>
             <TaggingSection />
+            <ListBoxDetails />
         </div>
      </Provider>
     );

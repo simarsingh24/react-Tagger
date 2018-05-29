@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class componentName extends Component {
+export default class Header extends Component {
   render() {
     return (
       <div className="HeaderText">
