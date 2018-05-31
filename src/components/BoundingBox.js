@@ -21,7 +21,7 @@ export default class BoundingBox extends Component {
     }
     )
   }
-  onClickhandler = () => {
+  onLabelClickHandler = () => {
     this.props.labelClick();
   }
   mouseLeaveHandler = () => {
@@ -32,9 +32,9 @@ export default class BoundingBox extends Component {
   }
 
   render() {
-    var style = {
-      left: this.props.left,
-    };
+    // var style = {
+    //   left: this.props.left,
+    // };
     var data = this.props.data;
 
     return (
@@ -42,7 +42,7 @@ export default class BoundingBox extends Component {
         onMouseOver={this.mouseOverHandler}
         onMouseLeave={this.mouseLeaveHandler}
       >
-        <div onClick={this.onClickhandler}>
+        <div onClick={this.onLabelClickHandler}>
           <Rnd className="Label"
             position={{ x: data.x, y: data.y }}
             enableResizing={false}
@@ -60,8 +60,8 @@ export default class BoundingBox extends Component {
           minWidth={data.minWidth}
           bounds='.imageHolder'
           position={{ x: data.x, y: data.y }}
-          onDrag={(e, d) => { this.onDragStopChange(e, d) }}
-          onResize={(e, direction, ref, delta, position) => { this.onResizeChange(e, direction, ref, delta, position) }}>
+          onDragStop={(e, d) => { this.onDragStopChange(e, d) }}
+          onResizeStop={(e, direction, ref, delta, position) => { this.onResizeChange(e, direction, ref, delta, position) }}>
           {this.state.mouseOver && this.props.showDeleteBox && (<DeleteBoxButton deleteBox={() => this.props.deleteBox()} />)}
         </Rnd>
 
