@@ -8,14 +8,7 @@ class ListBoxDetails extends Component {
     constructor(){
         super();
         this.handleBoxSelect = this.boxSelected.bind(this);
-    }
-    componentDidMount(){
-        // console.log(this.props.boundingBox.byHash['1'])
-        this.props.boundingBox.byId.map(id=>{
-            console.log(this.props.boundingBox.byHash[id]);
-        })
-    }
-    
+    }    
     boxSelected=(id)=>{
         this.props.selectBox(id);
     }
@@ -23,11 +16,13 @@ class ListBoxDetails extends Component {
   render() {
       var bbox= this.props.boundingBox;
     return (
+        <div className="BboxList">
       <ul>
           {bbox.byId.map(id=>
-            <RowBoxDetails 
+            <RowBoxDetails key={id}
             handleBoxSelect={(id)=>this.boxSelected(id)}
             id={id} 
+            label ={bbox.byHash[id].label}
             x={bbox.byHash[id].x}
             y={bbox.byHash[id].y}
             width={bbox.byHash[id].width}
@@ -35,6 +30,7 @@ class ListBoxDetails extends Component {
           )
         }
       </ul>
+      </div>
     )
   }
 }

@@ -1,0 +1,125 @@
+[
+	{
+		"label": "bag",
+		"id" : "1",
+		"confidence": 0.01, 
+		"start": {"x": 0, "y": 0}, 
+		"width": {"x": 292, "y": 326}
+	}, 
+	{
+			"label": "top",
+			"id" : "2",
+			"confidence": 0.18, 
+			"start": {"x": 22, "y": 136}, 
+			"width": {"x": 140, "y": 194}
+	}, 
+	{
+		"label": "top", 
+		"id" : "3",
+		"confidence": 0.64, 
+		"start": {"x": 134, "y": 120}, 
+		"width": {"x": 134, "y": 218}
+	}
+]
+
+
+APIs:
+
+1) GET /image   
+
+	[
+	{
+		"url": "https://asdkjahweasmdn",
+		"id" : "23"
+	}, 
+	{
+		"url": "https://asdkjahweasmdn",
+		"id" : "25"
+	}, 
+	{
+		"url": "https://asdkjahweasmdn",
+		"id" : "27"
+	}
+]
+
+2) GET /boundingBox/search?imageId=25&mode=MANUAL
+
+[
+	{
+		"caption": "basdqweag",
+		"id" : "123",
+		"confidence": 0.01, 
+		"start": {"x": 0, "y": 0}, 
+		"width": {"x": 292, "y": 326},
+		"mode" : "AUTO",
+		"model": 23
+	}, 
+	{
+		"caption": "tsdfqop",
+		"id" : "123",
+		"confidence": 0.18, 
+		"start": {"x": 22, "y": 136}, 
+		"width": {"x": 140, "y": 194},
+		"model": 25
+	}, 
+	{
+		"caption": "toasdqwep", 
+		"id" : "21343",
+		"confidence": 0.64, 
+		"start": {"x": 134, "y": 120}, 
+		"width": {"x": 134, "y": 218},
+		"model": 23
+	}
+]
+
+
+3) POST /boundingBox
+{
+	imageId: ,
+	model:
+	mode
+}
+
+4 PUT /boundingBox 
+{
+	x1
+	y1
+	x2
+	y3
+	labelId
+}
+
+
+
+
+
+Entities:
+
+image:
+id (234), url (http://www.someimage.com)
+
+boundingBox:
+
+id (452), x1, y1, x2, y2, mode(MANUAL), confidence(null), imageId(234), labelId(678), modelId(789), userId,status
+
+
+model:
+
+id(789), name(WD)
+id(799), name(MD)
+
+label:
+
+id(678), text(Cat), modelId(789)
+id(679), text(Dog), modelId(789)
+id(682), text(Dog), modelId(799)
+id(683), text(Jackal), modelId(799)
+
+user:
+
+id(123), userName(easwar)
+
+
+
+
+

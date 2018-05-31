@@ -1,4 +1,4 @@
-export const createBox=(id,x,y,w,h,minW,minH,maxW,maxH)=>{
+export const createBox=(id,x,y,w,h,minW,minH,maxW,maxH,label)=>{
     return{
         type : "CREATE_BOX",
         id : id,
@@ -10,8 +10,23 @@ export const createBox=(id,x,y,w,h,minW,minH,maxW,maxH)=>{
             maxWidth : maxW,
             maxHeight : maxH,
             minHeight : minH,
-            minWidth : minW
+            minWidth : minW,
+            label : label
         }
+    }
+}
+export const changeLabel=(id,label)=>{
+    return {
+        type : 'CHANGE_LABEL',
+        id : id,
+        payload :{
+            label : label
+        }
+    }
+}
+export const toggleShowAll=()=>{
+    return{
+        type : 'TOGGLE_SHOW_ALL',
     }
 }
 export const selectCurrBox=(id)=>{

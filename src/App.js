@@ -13,10 +13,16 @@ class App extends Component {
     return (
       <Provider store = {store}>
         <div className="App">
-            <InfoPanel />
-            <Header/>
-            <TaggingSection />
-            <ListBoxDetails />
+          <div className="Container">
+            <div className="AsideLeft">
+              <InfoPanel />
+              <ListBoxDetails/>
+            </div>
+            <div className="Main">
+              <Header/>
+              <TaggingSection />
+            </div>
+          </div>
         </div>
      </Provider>
     );

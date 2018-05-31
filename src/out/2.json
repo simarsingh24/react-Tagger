@@ -1,0 +1,42 @@
+[
+	{
+		"label": "other", 
+		"confidence": 0.01, 
+		"topleft": {"x": 270, "y": 487}, 
+		"bottomright": {"x": 1024, "y": 915}
+	}, 
+	{
+		"label": "jewelry", 
+		"confidence": 0.08, 
+		"topleft": {"x": 50, "y": 475}, 
+		"bottomright": {"x": 381, "y": 905}
+	}, 
+	{
+		"label": "shoe", 
+		"confidence": 0.01, 
+		"topleft": {"x": 0, "y": 458}, 
+		"bottomright": {"x": 444, "y": 908}
+	}, 
+	{
+		"label": "jewelry", 
+		"confidence": 0.09, 
+		"topleft": {"x": 0, "y": 491}, 
+		"bottomright": {"x": 879, "y": 902}
+	}, 
+	{
+		"label": "eyewear", "confidence": 0.04, 
+		"topleft": {"x": 140, "y": 507}, 
+		"bottomright": {"x": 1018, "y": 906}
+	}, 
+	{
+		"label": "jewelry", "confidence": 0.03, 
+		"topleft": {"x": 642, "y": 537}, 
+		"bottomright": {"x": 983, "y": 902}
+	}, 
+	{
+		"label": "other",
+		"confidence": 0.02,
+		"topleft": {"x": 30, "y": 480}, 
+		"bottomright": {"x": 460, "y": 879}
+	}
+]

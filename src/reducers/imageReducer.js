@@ -1,7 +1,6 @@
 const initalState = {
-    src : '../room.jpg',
-    offsetX:0,
-    offsetY:0
+    src : require('../1.jpg'),
+    mFactor:1,
 }
 
 const image=(state=initalState,action)=>{
